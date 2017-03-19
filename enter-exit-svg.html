@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="d3-src/d3.min.js" charset="utf-8"></script>
+    <title>D3 Intro</title>
+  </head>
+
+  <body>
+
+    <svg style="border: 1px solid;" width="500" height="500">
+    </svg>
+
+    <script>
+     var svg = d3.select("svg");
+     var info = [50, 150, 250, 350];
+
+     var enterTest = function() {
+
+       svg.selectAll("circle")
+	  .data(info)
+	  .enter()
+	  .append("circle")
+	  .attr("cy", "250")
+	  .attr("r", "40")
+	  .attr("cx", function(d) {
+	    return d + "px";
+	  });
+     };
+
+     var updateDiagram = function() {
+
+       svg.selectAll("circle")
+	  .data(info)
+	  .attr("cx", function(d) {
+	    return d + "px";
+	  });  
+     };
+     
+    </script>
+  </body>
+</html>
