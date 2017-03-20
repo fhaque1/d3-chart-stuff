@@ -19,54 +19,15 @@
   </head>
 
   <body>
-    <h2>Static Chart</h2>
-    <div class="chart">
-      <div style="width: 40px;">4</div>
-      <div style="width: 80px;">8</div>
-      <div style="width: 150px;">15</div>
-      <div style="width: 160px;">16</div>
-      <div style="width: 230px;">23</div>
-      <div style="width: 420px;">42</div>
-    </div>
 
     <hr>
     
     <h2>Dyamic Chart</h2>
     <div class="chart" id="dynamic">
     </div>
-
-    <script>
-     var dyn = d3.select("#dynamic");
-     var info = [4, 8, 15, 16, 23, 42];
-	 
-     var makeBars = function() {
-       
-       dyn.selectAll("div")
-	  .data(info)
-	  .enter()
-	  .append("div")
-	  .style("width", function(d) {
-	    return d + "px";
-	  })
-	  .text( function(d) {
-	    return d;
-	  });
-     };
-
-     var transitionTest = function(scale) {
-
-       dyn.selectAll("div")
-	  .data(info)
-	  .transition()
-	  .duration(2000)
-	  .style("width", function(d) {
-	    return d * scale + "px";
-	  });
-     };
-	 
-     
-	 makeBars();
-	 transitionTest(10);
+	<button id="2009">2009</button>
+	<button id="2016">2016</button>
+    <script src="chart.js">
 	 
     </script>
 
